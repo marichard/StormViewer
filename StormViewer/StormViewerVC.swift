@@ -38,7 +38,4 @@ class StormViewerVC: UITableViewController {
 		return cell
 	}
 	
-	
-       
-
 }
