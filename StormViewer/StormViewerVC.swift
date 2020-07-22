@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StormViewerVC: UIViewController {
+class StormViewerVC: UITableViewController {
 
 	var pictures = [String]()
 	
@@ -27,6 +27,18 @@ class StormViewerVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+	
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		pictures.count
+	}
+	
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
+		cell.textLabel?.text = pictures[indexPath.row]
+		return cell
+	}
+	
+	
        
 
 }
